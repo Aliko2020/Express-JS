@@ -1,21 +1,11 @@
-const express = require("express")
-const path = require('path');
-//Create an 
-const app = express()
-const Port = process.env.Port || 8080
+const express = require('express');
+const routes = require('./routes/users.js');
 
-app.get("/",(req,res)=>{
-    res.send("HELLO WORLD")
-})
+const app = express();
+const PORT =5000;
 
-let publicP = path.join(__dirname, "/public");
-app.use("/public",express.static(publicP))
+app.use(express.json());
 
-app.get('/about',(req,res)=>{
-    let path = __dirname + "/pages/index.html"
-    res.sendFile(path)
-})
+app.use("/user", routes);
 
-app.listen(Port,()=>{
-    console.log(`App listening on port: ${Port}`);
-})
+app.listen(PORT,()=>console.log("Server is running at port "+PORT));

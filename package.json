@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Aliko2020/Express-js#readme",
   "dependencies": {
+    "curl": "^0.1.4",
     "express.js": "^1.0.0",
     "nodemon": "^3.1.0"
   }

@@ -1,8 +1,7 @@
 const express = require("express")
 const path = require('path');
-
+//Create an 
 const app = express()
-
 const Port = process.env.Port || 8080
 
 app.get("/",(req,res)=>{
@@ -10,10 +9,7 @@ app.get("/",(req,res)=>{
 })
 
 let publicP = path.join(__dirname, "/public");
-
 app.use("/public",express.static(publicP))
-
-
 
 app.get('/about',(req,res)=>{
     let path = __dirname + "/pages/index.html"
